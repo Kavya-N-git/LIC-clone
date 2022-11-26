@@ -1,0 +1,62 @@
+[
+    {
+        "name":"Krishna Raj",
+        "UIN no": "512N339V02",
+        "installment premium":"2500",
+        "dob":"23/03/1997",
+        "contact number":"9989754637",
+        "email":"krishnaraj123@gmail.com",
+        "pan":"HHUPK2134",
+        "gender":"Male",
+        "passport number": "31195856"
+
+    },
+    {
+        "name":"Jayamma",
+        "UIN no": "512N345V01",
+        "installment premium":"2800",
+        "dob":"09/08/1978",
+        "contact number":"9989190637",
+        "email":"jayamma456@gmail.com",
+        "pan":"HKLPK4192",
+        "gender":"female",
+        "passport number": "45197856"
+
+    },
+    {
+        "name":"Jiya N",
+        "UIN no": "512N346V01",
+        "installment premium":"3500",
+        "dob":"23/03/1999",
+        "contact number":"9944754637",
+        "email":"jiyanagraj@gmail.com",
+        "pan":"HJUPK2162",
+        "gender":"female",
+        "passport number": "42194896"
+
+    },
+    {
+        "name":"Vijay J",
+        "UIN no": "512N349V01",
+        "installment premium":"2500",
+        "dob":"02/02/1995",
+        "contact number":"9981054237",
+        "email":"vijayjayram@gmail.com",
+        "pan":"HPUJK2154",
+        "gender":"male",
+        "passport number": "51296756"
+
+    },
+    {
+        "name":"Abhimanyu K",
+        "UIN no": "512N277V02",
+        "installment premium":"2000",
+        "dob":"27/08/1992",
+        "contact number":"9919750632",
+        "email":"abhimanyu897@gmail.com",
+        "pan":"HHKPU1235",
+        "gender":"male",
+        "passport number": "21299874"
+
+    }
+]

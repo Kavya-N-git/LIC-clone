@@ -1,0 +1,116 @@
+{
+    "Endowment plans":[
+        {
+            "id":"e01",
+            "product name":"LIC's Bima Jyoti",
+            "plan no":"860",
+            "UIN No":"512N339V02"
+        },
+        {
+            "id":"e02",
+            "product name":"LIC's Bima Ratna",
+            "plan no":"864",
+            "UIN No":"512N345V01"
+        },
+        {
+            "id":"e03",
+            "product name":"LIC's Dhan Sanchay",
+            "plan no":"865",
+            "UIN No":"512N346V01"
+        },
+        {
+            "id":"e04",
+            "product name":"LIC's Dhan Varsha",
+            "plan no":"866",
+            "UIN No":"512N349V01"
+        },
+        {
+            "id":"e05",
+            "product name":"LIC's New Endowment Plan",
+            "plan no":"914",
+            "UIN No":"512N277V02"
+        }
+    ],
+    "Money back plans":[
+        {
+            "id":"m01",
+            "product name":"LIC's Dhan rekha",
+            "plan no":"863",
+            "UIN No":"512N343V01"
+        },
+        {
+            "id":"m02",
+            "product name":"LIC's New Bima Bachat",
+            "plan no":"916",
+            "UIN No":"512N284V02"
+        },
+        {
+            "id":"m03",
+            "product name":"LICs Jeevan Umang",
+            "plan no":"945",
+            "UIN No":"512N312V02"
+        },
+        {
+            "id":"m04",
+            "product name":"LIC's Jeevan Tarun",
+            "plan no":"934",
+            "UIN No":"512N299V02"
+        },
+        {
+            "id":"m05",
+            "product name":"LIC's Bima Shree",
+            "plan no":"948",
+            "UIN No":"512N316V02"
+        }
+    ],
+    "Whole Life plans":[
+        {
+            "id":"w01",
+            "product name":"LICs Jeevan Umang",
+            "plan no":"945",
+            "UIN No":"512N312V02"
+        }
+
+    ],
+    "Term Assurance plans":[
+        {
+            "id":"t01",
+            "product name":"LIC's TECH TERM",
+            "plan no":"854",
+            "UIN No":"512N333V01"
+        },
+        {
+            "id":"t02",
+            "product name":"LIC's Jeevan Amar",
+            "plan no":"855",
+            "UIN No":"512N332V01"
+        },
+        {
+            "id":"t03",
+            "product name":"LIC's Saral Jeevan Bima",
+            "plan no":"859",
+            "UIN No":"512N341V01"
+        }
+    ],
+    "Rider":[
+        
+            {
+                "id":"r01",
+                "product name":"LIC's Accident Benefit Rider",
+                "UIN No":"512B203V03"
+            },
+            {
+                "id":"r02",
+                "product name":"LIC's Premium Waiver Benefit Rider",
+                "UIN No":"512B204V03"
+            },
+            {
+                "id":"r03",
+                "product name":"LIC’s New Critical Illness Benefit Rider",
+                "UIN No":"512A212V02"
+            }
+        
+    ]
+
+    
+}

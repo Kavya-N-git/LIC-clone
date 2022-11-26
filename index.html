@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" size="192x192" href="https://i.ibb.co/ZTCZWGN/lic-title-image.jpg">
+    <title>Life Insurance Corporation</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+  
+    <!--font awesome link-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+
+    <!--bootstrap5-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--Bootstrap icon-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!--End of Bootstrap icons-->
+
+    <!--owl-carousel-->
+    <link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.carousel.min.css"
+        rel="stylesheet">
+    <link href="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/assets/owl.theme.default.min.css"
+        rel="stylesheet">
+    <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/vendors/jquery.min.js">
+    </script>
+    <script src="https://owlcarousel2.github.io/OwlCarousel2/assets/owlcarousel/owl.carousel.js">
+    </script>
+    <!--end of owl-carousel-->
+
+
+</head>
+
+<body>
+    <!--header navbar-->
+    <nav class="navbar">
+
+        <div class="brandName"><img src="https://i.ibb.co/VY0ngrP/lic-logo.png" alt="lic-logo">
+            <img src="https://i.ibb.co/DYgcv0Z/change-mode.png" alt="darkmode-img" id="darkmode-img" onclick="changeMode();">
+
+        </div>
+        <script>
+            function changeMode(){
+    let mybody = document.body;
+        mybody.classList.toggle('mydark')
+}
+        </script>
+        <div class="geo-weather">
+            <img src="https://i.ibb.co/PWLtbXy/weather-icon.png" alt="weather-icon" id="weather-icon" onclick="geolocation()">
+           
+            <!--<span id="out"></span>
+            <span id="weatherOut"></span>-->
+            <script>
+                //let x = document.getElementById('out');
+           // let y = document.getElementById('weatherOut');
+            function geolocation(){
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(showPosition)
+                }else{
+                    //x.innerText = "Geo Not Supported"
+                    console.log("geo not supported")
+                }
+            }
+
+            function showPosition(data){
+                console.log(data)
+                let lat = data.coords.latitude;
+                let long = data.coords.longitude;
+               // x.innerText = `Latitude is ${lat} and longitude is ${long}`
+                const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${long}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`
+                //api calling
+                fetch(url,{method: 'GET'})
+                // return promise
+                .then((res) => res.json())
+                // resolve promise
+                .then((data) => {
+                    console.log(data)
+                    let cityName = data.city.name;
+                    let temp = data.list[0].temp.day;
+                    //y.innerText = `Your city is ${cityName} & temp is ${temp} °C`
+
+                    alert(`Latitude is ${lat} and longitude is ${long}\n` + `Your city is ${cityName} & temp is ${temp} °C`);
+                })
+                .catch((err) => {
+                    console.log(err)
+                })
+
+            }
+            </script>
+            </div>
+
+        <i class="fas fa-bars" id="icon-bar" onclick="displayNavbar()"></i>
+        <div class="navbarLinks">
+            <ul>
+                <li>Know your Life Insurance</li>
+                <li>Contact US</li>
+                <li>About US</li>
+                <li><i class="fas fa-calculator"></i>Calculator</li>
+                <li>Language</li>
+            </ul>
+            <div class="belowNavbar">
+                <ul>
+                    <li id="text_skip">Skip to main content</li>
+                    <li><img src="https://i.ibb.co/KG8fmvQ/swach.png" alt="swach-bharat" id="swatch-bharat"></li>
+                    <li><img src="https://i.ibb.co/mhHt8QW/azadi.png" alt="azadi" id="azadi"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <script src="index.js"></script>
+    <div class="website-header2">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="website-header2">
+            <div class="container-fluid">
+
+                <a class="navbar-brand" href="#"
+                    style="color: #fff;font-family: Helvetica !important;font-size:0.8rem !important">Home</a>
+
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                                Investor Relation
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Corporate Governance</a></li>
+                                <hr class="dropdown-divider">
+                                <li><a class="dropdown-item" href="#">Financial Details</a></li>
+                                <hr class="dropdown-divider">
+                                <li><a class="dropdown-item" href="#">Public disclosure</a></li>
+                                <hr class="dropdown-divider">
+                                <li><a class="dropdown-item" href="#">Shareholder service</a></li>
+                                <hr class="dropdown-divider">
+                        </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Insurance Plans</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Pension plan</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Unit Linked plans</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Micro Insurance plans</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Withdrawn plans</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Health plans</a></li>
+                            <hr class="dropdown-divider">
+                    </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                            Group Schemes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Insurance Plans</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Pension plan</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Unit Linked plans</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Micro Insurance plans</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Withdrawn plans</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Health plans</a></li>
+                            <hr class="dropdown-divider">
+                    </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                            Customer Service
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Claim settlement requirement</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Spurious calls</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Update your contact details-offline</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">unclaimed amount of policyholders</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Bonus info</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Policy status</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">NRI center</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Phone helpline</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Insurance selector</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Tax benefits</a></li>
+                            <hr class="dropdown-divider">
+
+                    </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                            Premium payment
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">FAQ of Alternate channels</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Payment of cash counter</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Payment through alternate channel</a></li>
+                            <hr class="dropdown-divider">
+                    </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                            Plan Nav
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Plan Nav</a></li>
+                            <hr class="dropdown-divider">
+                    </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: #fff;">
+                            Locator Branch
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Premium point</a></li>
+                            <hr class="dropdown-divider">
+                            <li><a class="dropdown-item" href="#">Micro Insurance Agent</a></li>
+                            <hr class="dropdown-divider">
+                    </li>
+                    </ul>
+                    </li>
+                    </ul>
+                    
+                    <div class="search-row">
+                        <div class="input-group col-md-4">
+                            <input class="form-control" type="search" placeholder="search" id="search-input">
+                            <span class="input-group-append">
+                                <button class="btn btn-warning" type="button">
+                                    <i class="bi bi-search" style="color: #fff !important;"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </nav>
+    </div>
+    <!--marquee-->
+    <div class="marque-content">
+        <marquee><span>"Individual Pension Policyholders/ Annuitants can submit Digital Life Certificate through mobile
+                app Jeevan Saakshya. App can be downloaded from play store"</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>"PLEASE REGISTER IN CUSTOMER PORTAL FOR AVAILING ONLINE SERVICES"</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span>Basic Safety measures to fight against Coronavirus Disease(COVID-19)</span>
+
+        </marquee>
+    </div>
+    <!--coupon-->
+    <div id="mainCoupon">
+
+    </div>
+    <div id="coupon">
+        <button onClick="closeCoupon()" id="btn-close">&times;</button>
+        <div class="coupon-card">
+
+            <img src="https://i.ibb.co/3FqYBsP/coupon-img.jpg" alt="coupon-image" class="logo">
+            <br>
+            <br>
+            <h2 id="coupon-text1">Protect your family from financial problems</h2>
+            <br>
+            <h3 id="coupon-text2">Get 20% off on first premium payment !!!</h3>
+            <br>
+            <div class="coupon-row">
+                <span id="couponCode">INTLFLYICICI</span>
+                <span id="copy-coupon">COPY CODE</span>
+            </div>
+        </div>
+    </div>
+    <script>
+        function loadCoupon() {
+    document.getElementById('coupon').style.visibility = 'visible';
+    document.getElementById('mainCoupon').style.opacity = '1'
+}
+
+function closeCoupon() {
+    document.getElementById('coupon').style.visibility = 'hidden';
+    document.getElementById('mainCoupon').style.opacity = '1'
+}
+
+
+var cpnBtn = document.getElementById("copy-coupon");
+var cpnCode = document.getElementById("couponCode");
+
+cpnBtn.onclick = function () {
+    navigator.clipboard.writeText(cpnCode.innerHTML);
+    cpnBtn.textContent="Code copied";
+}
+    </script>
+
+    <!--owl carousel-->
+    <div class="owl-carousel owl-theme owl-loaded owl-drag">
+
+        <div class="owl-stage-outer">
+
+            <div class="owl-stage" style="transform: translate3d(-1527px, 0px, 0px); transition: all 0.25s ease 0s; ">
+
+                <div class="owl-item cloned">
+                    <div class="item">
+                        <img src="https://i.ibb.co/3h627mH/carousel-pic1.jpg" alt="carousel-pic1">
+                    </div>
+                </div>
+
+                <div class="owl-item cloned">
+                    <div class="item">
+                        <img src="https://i.ibb.co/YhXwK4t/carousel-pic2.jpg" alt="carousel-pic2">
+                    </div>
+                </div>
+
+                <div class="owl-item cloned">
+                    <div class="item">
+                        <img src="https://i.ibb.co/1v9zKcH/carousel-pic3.jpg" alt="carousel-pic3">
+                    </div>
+                </div>
+
+                <div class="owl-item cloned">
+                    <div class="item">
+                        <img src="https://i.ibb.co/gFxSkqc/carousel-pic4.jpg" alt="carousel-pic4">
+                    </div>
+                </div>
+
+                <div class="owl-item cloned">
+                    <div class="item">
+                        <img src="https://i.ibb.co/RCjW3Kx/carousel-pic5.jpg" alt="carousel-pic5">
+                    </div>
+                </div>
+
+                <div class="owl-item cloned">
+                    <div class="item">
+                        <img src="https://i.ibb.co/H4nLhpK/carousel-pic6.jpg" alt="carousel-pic6">
+                    </div>
+                </div>
+
+                <div class="owl-item">
+                    <div class="item">
+                        <img src="https://i.ibb.co/3M7hSm4/carousel-pic7.jpg" alt="carousel-pic7">
+                    </div>
+                </div>
+                <div class="owl-item">
+                    <div class="item">
+                        <img src="https://i.ibb.co/5rZrcZj/carousel-pic8.jpg" alt="carousel-pic8">
+                    </div>
+                </div>
+
+                <div class="owl-item">
+                    <div class="item">
+                        <img src="https://i.ibb.co/jGdG84G/carousel-pic9.jpg" alt="carousel-pic9">
+                    </div>
+                </div>
+
+                <div class="owl-item">
+                    <div class="item">
+                        <img src="https://i.ibb.co/k41rWdW/carousel-pic10.jpg" alt="carousel-pic10">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <script>
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items: 1,
+                // items change number for slider display on desktop
+
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 2000,
+                autoplayHoverPause: true
+            });
+        </script>
+        <br>
+    </div>
+    <!--side menu-->
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto px-0">
+                <div id="sidebar" class="collapse collapse-horizontal show border-end">
+                    <div id="sidebar-nav" class="list-group border-0 rounded-0 text-sm-start min-vh-95">
+                        <a href="#" class="list-group-item border-end-0 d-inline-block text-truncate"
+                            data-bs-parent="#sidebar"><i class="bi bi-caret-right-fill"></i>
+                            <span>Products</span> </a>
+                        <a href="#" class="list-group-item border-end-0 d-inline-block text-truncate"
+                            data-bs-parent="#sidebar"><i class="bi bi-caret-right-fill"></i> <span>Login in
+                                Customer
+                                portal</span></a>
+                        <a href="#" class="list-group-item border-end-0 d-inline-block text-truncate"
+                            data-bs-parent="#sidebar"><i class="bi bi-caret-right-fill"></i> <span>Careers
+                            </span></a>
+                        <a href="#" class="list-group-item border-end-0 d-inline-block text-truncate"
+                            data-bs-parent="#sidebar"><i class="bi bi-caret-right-fill"></i>
+                            <span>Tenders</span></a>
+                        <a href="#" class="list-group-item border-end-0 d-inline-block text-truncate"
+                            data-bs-parent="#sidebar"><i class="bi bi-caret-right-fill"></i><span>Agent
+                                portal</span></a>
+                        <a href="#" class="list-group-item border-end-0 d-inline-block text-truncate"
+                            data-bs-parent="#sidebar"><i class="bi bi-caret-right-fill"></i></i> <span>Employees
+                                corner</span></a>
+                        <a href="#" class="list-group-item border-end-0 d-inline-block text-truncate"
+                            data-bs-parent="#sidebar"><i class="bi bi-caret-right-fill"></i><span>Download our
+                                free
+                                App</span></a>
+                        <a href="#" class="list-group-item border-end-0 d-inline-block text-truncate"
+                            data-bs-parent="#sidebar"><i class="bi bi-caret-right-fill"></i> <span>Pay premium
+                                through
+                                LIC Credit card</span></a>
+
+                    </div>
+                </div>
+            </div>
+            <main class="col ps-md-2 pt-2" style="background-color: #0A4D83;">
+                <!--<a href="#" data-bs-target="#sidebar" data-bs-toggle="collapse"
+            class="border rounded-3 p-1 text-decoration-none"><i class="bi bi-list bi-lg py-2 p-1"></i> Menu</a>-->
+                <div class="page-header pt-4">
+                    <div class="container">
+                        <div class="row gy-2">
+                            <div class="col-sm">
+                                <div class="card h-90">
+                                    <div class="card-body">
+                                        <p class="card-text"><span><i class="bi bi-phone"
+                                                    style="font-size: 2rem;">&nbsp;</i>Buy Online
+                                                Policies</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card h-90">
+                                    <div class="card-body">
+                                        <a href="https://ibb.co/GdkzBT0"><img
+                                                src="https://i.ibb.co/rQMDTsm/pan-reg.webp" alt="pan-reg" width="50px"
+                                                height="50px"></a>
+                                        <span class="card-text">PAN Registration</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card h-90">
+                                    <div class="card-body">
+                                        <a href="https://ibb.co/5F6K39q"><img
+                                                src="https://i.ibb.co/fv2DWSm/premium-pay.jpg" alt="premium-pay"
+                                                width="50px" height="50px"></a>
+                                        <span class="card-text">Pay Premium Online</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm">
+                                <div class="card h-90">
+                                    <div class="card-body">
+                                        <a href="https://ibb.co/hDY32Rw"><img
+                                                src="https://i.ibb.co/wMc5pNj/umbrella.jpg" alt="umbrella" width="50px"
+                                                height="50px"></a>
+                                        <span class="card-text">Other services</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col-sm-4" id="clickDiv">
+                    <div class="card h-25" id="clickDivCard">
+                        <div class="card-body" id="clickHere">
+                            <a href="https://ibb.co/vVJV4SP"><img src="https://i.ibb.co/9cqcH7T/lic-reg.png"
+                                    alt="lic-reg" style="width:7vh;height:7vh;"></a>
+                            <span class="card-text">&nbsp;</i>Click here</span>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+    </div>
+    <br>
+    <!--section three-->
+    <section id="section-3">
+        <div class="container">
+            <div class="row" id="section3Row">
+                <div class="col-3">
+                    <div class="card">
+                        <img src="https://i.ibb.co/frbK18y/lic-agent.jpg" alt="lic-agent">
+                        <div class="card-body" id="card">
+                            <p class="card-text">Want to be an LIC Agent</p>
+                            <button class="btn btn-primary" type="button" id="s3-click">Click here</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="https://i.ibb.co/P11qY9X/family.jpg" alt="family">
+                        <div class="card-body" id="card">
+                            <p class="card-text">NRI Customers</p>
+                            <button class="btn btn-primary" type="button" id="s3-click">Click here</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="https://i.ibb.co/B6KYtM9/corporate.jpg" alt="corporate">
+                        <div class="card-body" id="card">
+                            <p class="card-text">LIC quick tips</p>
+                            <button class="btn btn-primary" type="button" id="s3-click">Click here</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <img src="https://i.ibb.co/C13bzBP/covid.jpg" alt="covid">
+                        <div class="card-body" id="card" style="font-size:14px !important;line-height:1.7vh !important">
+                            <p>COVID-19</p>
+                            <p>One-step information</p>
+                            <p>#HarPalDeeshKeSaath</p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body" style="background-color: #ACDAE7 !important;">
+                            <div class="row g-0">
+                                <div class="col-sm-5">
+                                    <img src="https://i.ibb.co/ctkCJ59/s3-img1.png" alt="s3-img1">
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body" style="background-color:transparent  !important;">
+                                        <span class="card-text">Contact for Group Insurance Scheme</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body" style="background-color: #ACDAE7 !important;">
+                            <div class="row g-0">
+                                <div class="col-sm-5">
+                                    <img src="https://i.ibb.co/Bt21WXg/s3-img2.png" alt="s3-img2">
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body" style="background-color:transparent  !important;">
+                                        <span class="card-text">Pradhan Mantri Jeevan Jyoti Bima Yojana</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body" style="background-color: #ACDAE7 !important;">
+                            <div class="row g-0">
+                                <div class="col-sm-5">
+                                    <img src="https://i.ibb.co/GCPKMD9/s3-img-3.png" alt="s3-img-3">
+                                </div>
+                                <div class="col-sm-7">
+                                    <div class="card-body" style="background-color:transparent  !important;">
+                                        <span class="card-text">Pradhan Mantri Jan Dhan Yojana</span>
+                                        <h6 style="font-size:12px;">PMJDY-Life cover with LIC</h6>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--table-->
+    <section id="section4">
+        <div class="section-4">
+            <table>
+                <thead>
+                    <tr>
+                    <th>LIC Associates&Subsidiaries</th>
+                    <th>Foreign Units</th>
+                    <th>Premium Calculator</th>
+                    <th>Want Us to contact you</th>
+                </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" name="search" placeholder="search">
+                            <span><button type="button" class="btn btn-primary" style="height: 30px"><i
+                                        class="bi bi-search"></i></button>
+                        </td>
+                        <td>
+                            <input type="text" name="search" placeholder="search">
+                            <span><button type="button" class="btn btn-primary" style="height: 30px"><i
+                                        class="bi bi-search"></i></button>
+                        </td>
+                        <td>
+                            <p>Online calculator<span>
+                                    <button type="button" class="btn btn-primary"><i
+                                            class="bi bi-calculator"></i></button>
+                                </span></p>
+                        </td>
+                        <td>
+                            <p>Apply now <span>
+                                    <button type="button" class="btn btn-primary"><i class="bi bi-mouse"></i></button>
+                                </span></p>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+    </div>
+    </section>
+    <br>
+            <div class="down-nav">
+                <ul>
+                    <li>Things you must know</li>
+                    <li>Why Life Insurance</li>
+                    <li>Why invest</li>
+                    <li>Go Mobile</li>
+                </ul>
+            </div>
+        </section>
+        <section id="section-5" style="background-color: #00529c !important;">
+            <div class="section-5">
+                <ul>
+                    <li>Anti ford policy</li>
+                    <li>Careers</li>
+                    <li>Citizens Charter</li>
+                    <li>Copyright policy</li>
+                    <li>Customer Education</li>
+                    <li>CVC Website Link</li>
+                    <li>Download Forms</li>
+                </ul>
+            </div>
+        </section>
+        <div class="footer-div">
+            <p>Copyright © 2021 - All Rights Reserved - Official website of Life Insurance Corporation of India.</p>
+            <p>Content on this website is published and managed by Life Insurance Corporation of India.</p>
+            <p>Corporate Office : Yogakshema Building, Jeevan Bima Marg, P.O. Box No – 19953, Mumbai – 400 021 IRDAI Reg
+                No- 512</p>
+            <p>Life Insurance Corporation of India, Administrative Officer, Corporate Communication Dept.</p>
+
+        </div>
+        
+    
+    <script>
+        window.onload = loadCoupon()
+    </script>
+
+</body>
+
+</html>

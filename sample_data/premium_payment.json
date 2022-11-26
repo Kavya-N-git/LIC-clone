@@ -1,0 +1,57 @@
+[
+    {
+        "name":"Krishna Raj",
+        "UIN no":"512N339V02",
+        "plan":"860 (LIC's Bima Jyoti)",
+        "premium paying term":"20",
+        "commencement date":"23/01/2013",
+        "installment premium":"2,500.00",
+        "mode of payment":"UPI",
+        "transaction id":"K11122233344445",
+        "referal code":"3456789"
+    },
+    {
+        "name":"Jayamma",
+        "UIN no":"512N339V02",
+        "plan":"948(LIC's Bima Shree)",
+        "premium paying term":"30",
+        "commencement date":"21/09/2010",
+        "installment premium":"2,800.00",
+        "mode of payment":"UPI",
+        "transaction id":"T222333344445555",
+        "referal code":"12345679"
+    },
+    {
+        "name":"Jiya N",
+        "UIN no":"512N346V01",
+        "plan":"855 (LIC's Jeevan Amar)",
+        "premium paying term":"30",
+        "commencement date":"23/11/2017",
+        "installment premium":"3,500.00",
+        "mode of payment":"UPI",
+        "transaction id":"S999888777111222",
+        "referal code":"90876568"
+    },
+    {
+        "name":"Vijay J",
+        "UIN no":"512N349V01",
+        "plan":"916 (LIC's New Bima Bachat)",
+        "premium paying term":"10",
+        "commencement date":"03/03/2015",
+        "installment premium":"2,500.00",
+        "mode of payment":"UPI",
+        "transaction id":"T67854312345698",
+        "referal code":"90876548"
+    },
+    {
+        "name":"Abhimanyu K",
+        "UIN no":"512N277V02",
+        "plan":"914 (LIC's New Endowment Plan)",
+        "premium paying term":"10",
+        "commencement date":"9/01/2017",
+        "installment premium":"2,000.00",
+        "mode of payment":"UPI",
+        "transaction id":"T123988913452622",
+        "referal code":"908765678"
+    }
+]
