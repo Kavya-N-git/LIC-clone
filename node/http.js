@@ -8,4 +8,4 @@ let server = http.createServer((req,res) => {
     res.end()
 })
 
-server.listen(6790)
+server.listen(6790);
