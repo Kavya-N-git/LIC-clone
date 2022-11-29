@@ -11,6 +11,8 @@ http://localhost:9800/premium_payment
 
 plans/products
 
+--------------------------------------------------------------------
+
 http://localhost:9800/products
 
 with MongoDB atlas
@@ -20,8 +22,10 @@ http://localhost:9800/customerDetails
 premium payment
 http://localhost:9800/premiumPayment
 
-products
+plans/products
 http://localhost:9800/products
+
+------------------------------------------------------------------
 
 
 
