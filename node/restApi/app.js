@@ -1,21 +1,18 @@
-const mongoose = require('mongoose');
-const morgan=require('morgan');
-const express = require('express');
-
-
+let express = require('express');
 let app = express();
-
-const LiveUrl='mongodb+srv://test:test123@cluster0.pmiyo3t.mongodb.net/testdata?retryWrites=true&w=majority'
-
-//for localDB
-//let dotenv = require('dotenv')
-//dotenv.config()
-//let port = process.env.PORT || 9800;
-//let mongo = require('mongodb');
-//let MongoClient = mongo.MongoClient;
-//let MongoUrl =process.env.MongoURL;
-//let MongoUrl =process.env.LiveMongo;*/
+let dotenv = require('dotenv');
+dotenv.config()
+let port = process.env.PORT || 7800;
+let mongo=require('mongodb');
+const { response } = require('express');
+let MongoClient = mongo.MongoClient;
+let mongoUrl=process.env.LiveMongo;
 let db;
+let bodyparser=require('body-parser');
+const bodyParser = require('body-parser');
+app.use(bodyparser.urlencoded({extended:true}))
+app.use(bodyParser.json())
+
 
 app.get('/',(req,res)=>{
     res.send('hii from express')
@@ -28,17 +25,17 @@ app.get('/',(req,res)=>{
 
 
 //customer_portal details
-app.get('/customer_portal',(req,res)=>{
-    db.collection('customer_portal').find().toArray((err, result)=>{
+app.get('/customerDetails',(req,res)=>{
+    db.collection('customerDetails').find().toArray((err, result)=>{
         if (err) throw err;
         res.send(result)
     })
 })
 
 
-/*//premium_payment
-app.get('/premium_payment',(req,res)=>{
-    testdata.collection('premium_payment').find().toArray((err, result)=>{
+//premium_payment
+app.get('/premiumPayment',(req,res)=>{
+    db.collection('premiumPayment').find().toArray((err, result)=>{
         if (err) throw err;
         res.send(result)
     })
@@ -50,24 +47,14 @@ app.get('/products',(req,res)=>{
         if (err) throw err;
         res.send(result)
     })
-})*/
-
-//db connection with atlas
-mongoose.connect(LiveUrl,{
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}).then(()=>{
-    console.log("connected");
-}).catch((err)=>console.log(err));
-app.listen(9800,()=>{
-    console.log("app running at port 9800")
 })
 
-//db connection with localDb
-/*MongoClient.connect(MongoUrl, (err, client)=>{
-    if (err) console.log('error while connection');
-    db=client.db('testdata');
+//db connection with atlas
+MongoClient.connect(mongoUrl,(err,client) => {
+    if(err) console.log('Error while connecting');
+    db = client.db('licData');
     app.listen(port,()=>{
-      console.log(`server ${port}`)
-  })
-  })*/
+        console.log(`Server is running on port ${port}`)
+    })
+
+})
